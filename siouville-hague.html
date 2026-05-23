@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siouville-Hague &mdash; Guide du mariage</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green:   #1B3A2E;
+  --gold:    #C4993A;
+  --gold-lt: #E8D090;
+  --cream:   #FAF6ED;
+  --cream-dk:#F0E9D8;
+  --sage:    #6A8C78;
+  --ink:     #1C1A18;
+  --muted:   #7A6E62;
+  --line:    #D8CEB8;
+  --serif:   'Cormorant Garant', Georgia, serif;
+  --sans:    'Jost', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; }
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* NAV */
+.wiki-nav {
+  background: var(--green); padding: 0 5vw;
+  display: flex; align-items: center; gap: 16px;
+  height: 52px; box-shadow: 0 2px 16px rgba(0,0,0,.2);
+  position: sticky; top: 0; z-index: 100;
+}
+.wiki-nav-brand {
+  font-family: var(--serif); font-style: italic;
+  font-size: 18px; color: var(--gold-lt);
+  text-decoration: none; white-space: nowrap;
+}
+.wiki-nav-sep { width: 1px; height: 20px; background: rgba(196,153,58,.3); }
+.wiki-nav-crumb {
+  font-size: 9px; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(232,208,144,.55); white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wiki-nav-crumb span { color: rgba(232,208,144,.35); margin: 0 6px; }
+.wiki-nav-back {
+  margin-left: auto;
+  font-size: 9px; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(232,208,144,.55); white-space: nowrap;
+  transition: color .2s; text-decoration: none;
+}
+.wiki-nav-back:hover { color: var(--gold-lt); text-decoration: none; }
+
+/* HERO commune */
+.wiki-hero {
+  background: var(--green); padding: 40px 5vw 36px;
+  position: relative; overflow: hidden;
+}
+.wiki-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(196,153,58,.035) 20px, rgba(196,153,58,.035) 21px),
+    repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(196,153,58,.035) 20px, rgba(196,153,58,.035) 21px);
+}
+.wiki-hero-inner {
+  position: relative; z-index: 1;
+  max-width: 960px; margin: 0 auto;
+}
+.wiki-hero-eyebrow {
+  font-size: 9px; letter-spacing: .35em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 8px;
+}
+.wiki-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 6vw, 52px);
+  color: var(--gold-lt); font-weight: 400;
+  line-height: 1.15; margin-bottom: 4px;
+}
+.wiki-hero-nor {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(14px, 2.5vw, 20px);
+  color: rgba(232,208,144,.52); margin-bottom: 16px;
+}
+.wiki-hero-role {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(196,153,58,.12);
+  border: 1px solid rgba(196,153,58,.3);
+  padding: 6px 14px;
+  font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gold-lt);
+}
+
+/* MAIN LAYOUT */
+.wiki-main {
+  max-width: 960px; margin: 0 auto;
+  padding: 32px 5vw 64px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 36px;
+  align-items: start;
+}
+@media (max-width: 700px) {
+  .wiki-main { grid-template-columns: 1fr; }
+  .wiki-infobox { order: -1; }
+}
+
+/* INFOBOX */
+.wiki-infobox {
+  background: var(--cream-dk);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  position: sticky; top: 68px;
+}
+.wiki-infobox-title {
+  background: var(--green); color: var(--gold-lt);
+  font-family: var(--serif); font-size: 15px; font-weight: 600;
+  padding: 11px 14px; text-align: center; line-height: 1.3;
+}
+.wiki-infobox-title em {
+  display: block; font-size: 11px; font-style: italic;
+  opacity: .6; font-weight: 300; margin-top: 3px;
+}
+.wiki-infobox-img {
+  width: 100%; height: 140px;
+  background: var(--cream); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 58px; border-bottom: 1px solid var(--line);
+}
+.wiki-infobox table { width: 100%; border-collapse: collapse; }
+.wiki-infobox td {
+  padding: 6px 12px; border-bottom: 1px solid var(--line);
+  vertical-align: top; font-size: 12.5px; line-height: 1.5;
+}
+.wiki-infobox td:first-child {
+  font-weight: 500; color: var(--green);
+  width: 42%; font-size: 11.5px;
+}
+.wiki-infobox-role {
+  background: rgba(27,58,46,.06);
+  padding: 10px 13px; font-size: 12px;
+  color: var(--ink); line-height: 1.75;
+  border-top: 1px solid var(--line);
+}
+.wiki-infobox-role strong {
+  display: block; font-size: 9px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--green);
+  margin-bottom: 5px;
+}
+.wiki-infobox-nor {
+  background: rgba(196,153,58,.06);
+  padding: 9px 13px; font-family: var(--serif);
+  font-style: italic; font-size: 12px; color: var(--muted);
+  text-align: center; line-height: 1.7;
+  border-top: 1px solid var(--line);
+}
+
+/* ARTICLE */
+.wiki-article {}
+.wiki-lead {
+  font-family: var(--serif); font-size: 16.5px;
+  line-height: 1.8; color: var(--ink); margin-bottom: 24px;
+  font-weight: 300;
+}
+.wiki-lead strong { font-weight: 600; color: var(--green); }
+.wiki-lead em { font-style: italic; }
+
+.wiki-toc {
+  background: var(--cream-dk); border: 1px solid var(--line);
+  padding: 14px 18px; margin-bottom: 28px;
+  font-size: 13px;
+}
+.wiki-toc-title {
+  font-family: var(--sans); font-size: 10px; font-weight: 500;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 10px;
+}
+.wiki-toc ol { padding-left: 18px; display: flex; flex-direction: column; gap: 5px; }
+.wiki-toc li a { color: var(--green); font-size: 13px; }
+.wiki-toc li a:hover { color: var(--gold); }
+
+.wiki-h2 {
+  font-family: var(--sans); font-size: 10.5px; font-weight: 500;
+  letter-spacing: .26em; text-transform: uppercase;
+  color: var(--green); padding-bottom: 6px;
+  border-bottom: 1.5px solid var(--green);
+  margin: 28px 0 12px;
+}
+.wiki-h2:first-of-type { margin-top: 0; }
+
+.wiki-p {
+  font-size: 14.5px; line-height: 1.85;
+  color: var(--ink); font-weight: 300;
+  margin-bottom: 14px;
+}
+.wiki-p strong { font-weight: 600; color: var(--green); }
+.wiki-p em { font-style: italic; color: var(--muted); }
+.wiki-p a { color: var(--green); border-bottom: 1px dotted var(--gold); }
+
+.wiki-quote {
+  border-left: 3px solid var(--gold);
+  padding: 12px 18px; margin: 18px 0;
+  background: rgba(196,153,58,.05);
+  font-family: var(--serif); font-style: italic;
+  font-size: 15.5px; color: var(--muted); line-height: 1.75;
+}
+.wiki-quote cite {
+  display: block; font-style: normal;
+  font-size: 11.5px; color: var(--sage);
+  margin-top: 7px; letter-spacing: .04em;
+}
+
+.wiki-persons {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 8px;
+  margin-bottom: 14px;
+}
+.wiki-persons li {
+  font-size: 14px; line-height: 1.65;
+  padding-left: 16px; position: relative; color: var(--ink);
+}
+.wiki-persons li::before {
+  content: '·'; position: absolute; left: 0;
+  color: var(--gold); font-size: 20px; line-height: 1;
+}
+.wiki-persons em { color: var(--muted); font-style: italic; }
+
+/* Mariage highlight */
+.wiki-mariage {
+  background: rgba(27,58,46,.05);
+  border-left: 3px solid var(--green);
+  padding: 16px 20px; margin-top: 8px;
+}
+.wiki-mariage p { font-size: 14px; line-height: 1.8; color: var(--ink); }
+.wiki-mariage strong { color: var(--green); font-weight: 600; }
+
+/* Related communes */
+.wiki-related {
+  margin-top: 40px; padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.wiki-related-title {
+  font-size: 9px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px;
+}
+.wiki-related-links {
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.wiki-related-link {
+  padding: 7px 14px;
+  background: var(--cream-dk); border: 1px solid var(--line);
+  font-size: 12px; color: var(--green);
+  transition: all .2s;
+}
+.wiki-related-link:hover {
+  background: var(--green); color: var(--gold-lt);
+  text-decoration: none;
+}
+.wiki-related-link em { display: block; font-style: italic; font-size: 10px; color: var(--muted); margin-top: 1px; }
+.wiki-related-link:hover em { color: rgba(232,208,144,.6); }
+
+/* FOOTER */
+footer {
+  background: #0F2419; padding: 32px 5vw;
+  text-align: center; display: flex; flex-direction: column; gap: 8px;
+}
+.footer-names { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--gold-lt); }
+.footer-date { font-size: 8.5px; letter-spacing: .32em; text-transform: uppercase; color: rgba(232,208,144,.36); }
+</style>
+</head><body>
+<nav class="wiki-nav">
+  <a href="index.html" class="wiki-nav-brand">K &amp; S</a>
+  <div class="wiki-nav-sep"></div>
+  <span class="wiki-nav-crumb">R&eacute;gion &amp; Communes<span>&rsaquo;</span>Siouville-Hague</span>
+  <a href="index.html" class="wiki-nav-back">&larr; Retour au site</a>
+</nav>
+<div class="wiki-hero">
+  <div class="wiki-hero-inner">
+    <p class="wiki-hero-eyebrow">Commune littorale &middot; Canton des Pieux &middot; Manche (50)</p>
+    <h1 class="wiki-hero-title">Siouville-Hague</h1>
+    <p class="wiki-hero-nor">Siouville-Hague</p>
+    <div class="wiki-hero-role">&#8764;&ensp;Station baln&eacute;aire &mdash; plage &amp; surf &agrave; 15&nbsp;min du mariage</div>
+  </div>
+</div>
+<div class="wiki-main">
+  <article class="wiki-article">
+    <p class="wiki-lead"><strong>Siouville-Hague</strong> est une commune littorale de la Manche, situ&eacute;e sur la c&ocirc;te ouest 
+  du Cotentin, &agrave; une vingtaine de kilom&egrave;tres au sud-ouest de Cherbourg (Tchidbouo). 
+  Cette petite <strong>station baln&eacute;aire</strong> est r&eacute;put&eacute;e pour sa grande plage de sable fin 
+  et ses conditions de surf exceptionnelles &mdash; class&eacute;e <strong>3e ville de surf de France</strong> 
+  en 2017, derri&egrave;re Biarritz et Lacanau. Le GR223 la traverse, reliant la Hague au reste du Cotentin.</p>
+    <div class="wiki-toc">
+      <p class="wiki-toc-title">Sommaire</p>
+      <ol><li><a href="#geographie">G&eacute;ographie &middot; G&eacute;ographie</a></li><li><a href="#surf">Ville de surf &middot; Ville de surf</a></li><li><a href="#histoire">Histoire notable &middot; Histou&egrave;re</a></li><li><a href="#patrimoine">Patrimoine &middot; H&eacute;ritage</a></li><li><a href="#mariage">Lien avec le mariage</a></li></ol>
+    </div>
+    <h2 class="wiki-h2" id="geographie">G&eacute;ographie &middot; G&eacute;ographie</h2>
+<p class="wiki-p">Situ&eacute;e sur la c&ocirc;te ouest du Cotentin, Siouville-Hague s'&eacute;tend sur 
+     6,37&nbsp;km&sup2; entre les communes de H&eacute;auville, Helleville et Tr&eacute;auville. Son territoire 
+     littoral est soumis &agrave; la <strong>loi littorale</strong>, qui encadre strictement l'urbanisme 
+     en bord de mer. L'altitude varie de 5 &agrave; 99 m&egrave;tres.</p>
+     <p class="wiki-p">La <strong>plage de Siouville</strong>, longue de plusieurs kilom&egrave;tres, est 
+     prot&eacute;g&eacute;e par un massif dunaire fragile. Les vents dominants d'ouest et les houles 
+     de l'Atlantique cr&eacute;ent des conditions de surf r&eacute;guli&egrave;res et de qualit&eacute;.</p>
+<h2 class="wiki-h2" id="surf">Ville de surf &middot; Ville de surf</h2>
+<p class="wiki-p">Siouville-Hague est officiellement class&eacute;e <strong>Ville de surf</strong> depuis 2017, 
+     rejoignant Biarritz et Lacanau dans ce label national. La plage accueille surf, longboard, bodyboard, 
+     planche &agrave; voile, funboard et char &agrave; voile. Elle est <strong>surveill&eacute;e en juillet 
+     et ao&ucirc;t</strong> par des sapeurs-pompiers du canton des Pieux.</p>
+     <p class="wiki-p">La commune est &eacute;galement labellis&eacute;e <strong>Pavillon Bleu</strong>, 
+     gage de la qualit&eacute; de ses eaux de baignade et de la gestion durable du littoral. 
+     Un <strong>centre de thalassoth&eacute;rapie</strong> est pr&eacute;sent depuis 1969.</p>
+<h2 class="wiki-h2" id="histoire">Histoire notable &middot; Histou&egrave;re</h2>
+<p class="wiki-p">En 1908, le <em>Royal Technical Institute de Manchester</em> installe 
+     un village de toile de 15 tentes en bordure de mer &mdash; l'un des premiers campings 
+     organis&eacute;s de la r&eacute;gion.</p>
+     <p class="wiki-p">En 1837, la commune conna&icirc;t un &eacute;v&eacute;nement hors du commun : 
+     la <strong>conversion collective au protestantisme</strong> de ses habitants &mdash; 
+     un ph&eacute;nom&egrave;ne exceptionnel dans une Normandie catholique. L'<strong>ancien temple 
+     protestant</strong>, toujours visible, t&eacute;moigne de cet &eacute;pisode unique.</p>
+     <p class="wiki-p">La commune s'appelait simplement <em>Siouville</em> jusqu'en mars 1971, 
+     date &agrave; laquelle le d&eacute;terminatif <em>Hague</em> lui est pr&eacute;f&eacute;r&eacute;, 
+     ancrant son identit&eacute; dans le pays de la Hague.</p>
+<h2 class="wiki-h2" id="patrimoine">Patrimoine &middot; H&eacute;ritage</h2>
+<ul class="wiki-persons">
+       <li><strong>Manoir du Valciot</strong> (XVI&deg; s.) <em>&mdash; construit par la famille Basan, 
+       l'un des plus beaux manoirs de la c&ocirc;te ouest du Cotentin.</em></li>
+       <li><strong>&Eacute;glise Saint-Pierre</strong> <em>&mdash; remarquable par sa tour carr&eacute;e 
+       surmount&eacute;e d'une coupole hexagonale, construction de la seconde moiti&eacute; du XVIII&deg; s.</em></li>
+       <li><strong>Temple protestant</strong> <em>&mdash; t&eacute;moin de la conversion collective de 1837.</em></li>
+       <li><strong>Fort dominant la plage</strong> <em>&mdash; fortification c&ocirc;ti&egrave;re historique.</em></li>
+     </ul>
+<h2 class="wiki-h2" id="mariage">Lien avec le mariage</h2>
+<div class="wiki-mariage">
+       <p>Siouville-Hague est &agrave; <strong>15 minutes en voiture</strong> des lieux du mariage 
+       (Saint-Christophe-du-Foc, Urville-Nacqueville, Gr&eacute;ville-Hague). Sa plage est l'endroit 
+       id&eacute;al pour une matinee de d&eacute;tente avant ou apr&egrave;s les festivit&eacute;s, 
+       ou pour une baignade le dimanche matin avant le r&eacute;c&acirc;od. 
+       Le GR223 part &eacute;galement de la commune.</p>
+     </div>
+
+    
+<div class="wiki-mariage" style="margin-top:8px">
+<h2 class="wiki-h2" id="transport">Acc&egrave;s en bus &middot; R&eacute;seau Cap Cotentin</h2>
+<p class="wiki-p"><strong>Ligne B</strong> &mdash; <em>Siouville-Hague / Flamanville &harr; Cherbourg-Gare</em><br>
+La Ligne B dessert directement <strong>Siouville-Hague</strong> depuis Cherbourg. Horaires et fr&eacute;quences sur le site Cap Cotentin.</p>
+<p class="wiki-p"><a href="https://www.capcotentin.fr" style="color:var(--green);border-bottom:1px dotted var(--gold)">capcotentin.fr</a></p>
+</div>
+<div class="wiki-related">
+      <p class="wiki-related-title">Pages associ&eacute;es</p>
+      <div class="wiki-related-links"><a class="wiki-related-link" href="sant-chretophlle.html">Saint-Christophe-du-Foc<em>Sant-Chrétophlle</em></a><a class="wiki-related-link" href="urvile-nachevile.html">Urville-Nacqueville<em>Urvile-Nachevile</em></a><a class="wiki-related-link" href="greve-hague.html">Gréville-Hague<em>Greve-Hague</em></a><a class="wiki-related-link" href="jobouo.html">Jobourg<em>Jobouo</em></a><a class="wiki-related-link" href="cotentin.html">Le Cotentin<em>Lo Cotentîn</em></a><a class="wiki-related-link" href="la-hague.html">La Hague<em>La Hague</em></a><a class="wiki-related-link" href="tchidbouo.html">Cherbourg<em>Tchidbouo</em></a></div>
+    </div>
+  </article>
+  <aside class="wiki-infobox">
+    <div class="wiki-infobox-title">Siouville-Hague<em>Siouville-Hague</em></div>
+    <div class="wiki-infobox-img">&#8764;</div>
+    <table><tr><td>D&eacute;partement</td><td>Manche (50)</td></tr><tr><td>R&eacute;gion</td><td>Normaundie</td></tr><tr><td>Code postal</td><td>50340</td></tr><tr><td>Population</td><td>~931 hab. (2023)</td></tr><tr><td>Superficie</td><td>6,37&nbsp;km&sup2;</td></tr><tr><td>Altitude</td><td>5&ndash;99&nbsp;m (moy. 76&nbsp;m)</td></tr><tr><td>Habitants</td><td>Les Siouvillais</td></tr><tr><td>Label</td><td>Ville de surf (2017)</td></tr><tr><td>Label</td><td>Pavillon Bleu</td></tr><tr><td>Canton</td><td>Les Pieux</td></tr><tr><td>Site</td><td><a href='https://ville-siouville-hague.fr'>ville-siouville-hague.fr</a></td></tr></table>
+    <div class="wiki-infobox-role"><strong>Lien avec le mariage</strong>&#8764; Plage &amp; activit&eacute;s nautiques &agrave; 15&nbsp;min des lieux du mariage</div>
+    <div class="wiki-infobox-nor"><em>&laquo;&nbsp;Siouville &mdash; station surf<br>du Cotentin&nbsp;&raquo;</em></div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-names">Kevin &amp; Solene</div>
+  <div class="footer-date">28 &amp; 29 Aout 2027 &middot; Cap de la Hague &middot; Normaundie</div>
+</footer>
+</body></html>

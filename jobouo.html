@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jobourg &mdash; Nez de Jobourg &mdash; Guide du mariage Kevin &amp; Solene</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green:   #1B3A2E;
+  --gold:    #C4993A;
+  --gold-lt: #E8D090;
+  --cream:   #FAF6ED;
+  --cream-dk:#F0E9D8;
+  --sage:    #6A8C78;
+  --ink:     #1C1A18;
+  --muted:   #7A6E62;
+  --line:    #D8CEB8;
+  --serif:   'Cormorant Garant', Georgia, serif;
+  --sans:    'Jost', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; }
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* NAV */
+.wiki-nav {
+  background: var(--green); padding: 0 5vw;
+  display: flex; align-items: center; gap: 16px;
+  height: 52px; box-shadow: 0 2px 16px rgba(0,0,0,.2);
+  position: sticky; top: 0; z-index: 100;
+}
+.wiki-nav-brand {
+  font-family: var(--serif); font-style: italic;
+  font-size: 18px; color: var(--gold-lt);
+  text-decoration: none; white-space: nowrap;
+}
+.wiki-nav-sep { width: 1px; height: 20px; background: rgba(196,153,58,.3); }
+.wiki-nav-crumb {
+  font-size: 9px; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(232,208,144,.55); white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wiki-nav-crumb span { color: rgba(232,208,144,.35); margin: 0 6px; }
+.wiki-nav-back {
+  margin-left: auto;
+  font-size: 9px; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(232,208,144,.55); white-space: nowrap;
+  transition: color .2s; text-decoration: none;
+}
+.wiki-nav-back:hover { color: var(--gold-lt); text-decoration: none; }
+
+/* HERO commune */
+.wiki-hero {
+  background: var(--green); padding: 40px 5vw 36px;
+  position: relative; overflow: hidden;
+}
+.wiki-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(196,153,58,.035) 20px, rgba(196,153,58,.035) 21px),
+    repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(196,153,58,.035) 20px, rgba(196,153,58,.035) 21px);
+}
+.wiki-hero-inner {
+  position: relative; z-index: 1;
+  max-width: 960px; margin: 0 auto;
+}
+.wiki-hero-eyebrow {
+  font-size: 9px; letter-spacing: .35em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 8px;
+}
+.wiki-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 6vw, 52px);
+  color: var(--gold-lt); font-weight: 400;
+  line-height: 1.15; margin-bottom: 4px;
+}
+.wiki-hero-nor {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(14px, 2.5vw, 20px);
+  color: rgba(232,208,144,.52); margin-bottom: 16px;
+}
+.wiki-hero-role {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(196,153,58,.12);
+  border: 1px solid rgba(196,153,58,.3);
+  padding: 6px 14px;
+  font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gold-lt);
+}
+
+/* MAIN LAYOUT */
+.wiki-main {
+  max-width: 960px; margin: 0 auto;
+  padding: 32px 5vw 64px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 36px;
+  align-items: start;
+}
+@media (max-width: 700px) {
+  .wiki-main { grid-template-columns: 1fr; }
+  .wiki-infobox { order: -1; }
+}
+
+/* INFOBOX */
+.wiki-infobox {
+  background: var(--cream-dk);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  position: sticky; top: 68px;
+}
+.wiki-infobox-title {
+  background: var(--green); color: var(--gold-lt);
+  font-family: var(--serif); font-size: 15px; font-weight: 600;
+  padding: 11px 14px; text-align: center; line-height: 1.3;
+}
+.wiki-infobox-title em {
+  display: block; font-size: 11px; font-style: italic;
+  opacity: .6; font-weight: 300; margin-top: 3px;
+}
+.wiki-infobox-img {
+  width: 100%; height: 140px;
+  background: var(--cream); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 58px; border-bottom: 1px solid var(--line);
+}
+.wiki-infobox table { width: 100%; border-collapse: collapse; }
+.wiki-infobox td {
+  padding: 6px 12px; border-bottom: 1px solid var(--line);
+  vertical-align: top; font-size: 12.5px; line-height: 1.5;
+}
+.wiki-infobox td:first-child {
+  font-weight: 500; color: var(--green);
+  width: 42%; font-size: 11.5px;
+}
+.wiki-infobox-role {
+  background: rgba(27,58,46,.06);
+  padding: 10px 13px; font-size: 12px;
+  color: var(--ink); line-height: 1.75;
+  border-top: 1px solid var(--line);
+}
+.wiki-infobox-role strong {
+  display: block; font-size: 9px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--green);
+  margin-bottom: 5px;
+}
+.wiki-infobox-nor {
+  background: rgba(196,153,58,.06);
+  padding: 9px 13px; font-family: var(--serif);
+  font-style: italic; font-size: 12px; color: var(--muted);
+  text-align: center; line-height: 1.7;
+  border-top: 1px solid var(--line);
+}
+
+/* ARTICLE */
+.wiki-article {}
+.wiki-lead {
+  font-family: var(--serif); font-size: 16.5px;
+  line-height: 1.8; color: var(--ink); margin-bottom: 24px;
+  font-weight: 300;
+}
+.wiki-lead strong { font-weight: 600; color: var(--green); }
+.wiki-lead em { font-style: italic; }
+
+.wiki-toc {
+  background: var(--cream-dk); border: 1px solid var(--line);
+  padding: 14px 18px; margin-bottom: 28px;
+  font-size: 13px;
+}
+.wiki-toc-title {
+  font-family: var(--sans); font-size: 10px; font-weight: 500;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 10px;
+}
+.wiki-toc ol { padding-left: 18px; display: flex; flex-direction: column; gap: 5px; }
+.wiki-toc li a { color: var(--green); font-size: 13px; }
+.wiki-toc li a:hover { color: var(--gold); }
+
+.wiki-h2 {
+  font-family: var(--sans); font-size: 10.5px; font-weight: 500;
+  letter-spacing: .26em; text-transform: uppercase;
+  color: var(--green); padding-bottom: 6px;
+  border-bottom: 1.5px solid var(--green);
+  margin: 28px 0 12px;
+}
+.wiki-h2:first-of-type { margin-top: 0; }
+
+.wiki-p {
+  font-size: 14.5px; line-height: 1.85;
+  color: var(--ink); font-weight: 300;
+  margin-bottom: 14px;
+}
+.wiki-p strong { font-weight: 600; color: var(--green); }
+.wiki-p em { font-style: italic; color: var(--muted); }
+.wiki-p a { color: var(--green); border-bottom: 1px dotted var(--gold); }
+
+.wiki-quote {
+  border-left: 3px solid var(--gold);
+  padding: 12px 18px; margin: 18px 0;
+  background: rgba(196,153,58,.05);
+  font-family: var(--serif); font-style: italic;
+  font-size: 15.5px; color: var(--muted); line-height: 1.75;
+}
+.wiki-quote cite {
+  display: block; font-style: normal;
+  font-size: 11.5px; color: var(--sage);
+  margin-top: 7px; letter-spacing: .04em;
+}
+
+.wiki-persons {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 8px;
+  margin-bottom: 14px;
+}
+.wiki-persons li {
+  font-size: 14px; line-height: 1.65;
+  padding-left: 16px; position: relative; color: var(--ink);
+}
+.wiki-persons li::before {
+  content: '·'; position: absolute; left: 0;
+  color: var(--gold); font-size: 20px; line-height: 1;
+}
+.wiki-persons em { color: var(--muted); font-style: italic; }
+
+/* Mariage highlight */
+.wiki-mariage {
+  background: rgba(27,58,46,.05);
+  border-left: 3px solid var(--green);
+  padding: 16px 20px; margin-top: 8px;
+}
+.wiki-mariage p { font-size: 14px; line-height: 1.8; color: var(--ink); }
+.wiki-mariage strong { color: var(--green); font-weight: 600; }
+
+/* Related communes */
+.wiki-related {
+  margin-top: 40px; padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.wiki-related-title {
+  font-size: 9px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px;
+}
+.wiki-related-links {
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.wiki-related-link {
+  padding: 7px 14px;
+  background: var(--cream-dk); border: 1px solid var(--line);
+  font-size: 12px; color: var(--green);
+  transition: all .2s;
+}
+.wiki-related-link:hover {
+  background: var(--green); color: var(--gold-lt);
+  text-decoration: none;
+}
+.wiki-related-link em { display: block; font-style: italic; font-size: 10px; color: var(--muted); margin-top: 1px; }
+.wiki-related-link:hover em { color: rgba(232,208,144,.6); }
+
+/* FOOTER */
+footer {
+  background: #0F2419; padding: 32px 5vw;
+  text-align: center; display: flex; flex-direction: column; gap: 8px;
+}
+.footer-names { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--gold-lt); }
+.footer-date { font-size: 8.5px; letter-spacing: .32em; text-transform: uppercase; color: rgba(232,208,144,.36); }
+</style>
+</head>
+<body>
+
+<nav class="wiki-nav">
+  <a href="index.html" class="wiki-nav-brand">K &amp; S</a>
+  <div class="wiki-nav-sep"></div>
+  <span class="wiki-nav-crumb">
+    Communes du mariage<span>&rsaquo;</span>Jobourg &mdash; Nez de Jobourg
+  </span>
+  <a href="index.html" class="wiki-nav-back">&larr; Retour au site</a>
+</nav>
+
+<div class="wiki-hero">
+  <div class="wiki-hero-inner">
+    <p class="wiki-hero-eyebrow">Commune d&eacute;l&eacute;gu&eacute;e de La Hague &middot; Manche (50)</p>
+    <h1 class="wiki-hero-title">Jobourg &mdash; Nez de Jobourg</h1>
+    <p class="wiki-hero-nor">Jobouo &mdash; Nez d'Jobouo</p>
+    <div class="wiki-hero-role">&#9641;&ensp;Photo famille &amp; t&eacute;moins &mdash; 28 A&ocirc;t 2027, 9&nbsp;h&nbsp;30</div>
+  </div>
+</div>
+
+<div class="wiki-main">
+
+  <!-- ARTICLE -->
+  <article class="wiki-article">
+
+    <p class="wiki-lead"><strong>Jobourg</strong> <em>(Jobouo en normand)</em>, et plus particuli&egrave;rement 
+  son <strong>Nez de Jobourg</strong>, est un promontoire rocheux aux falaises de 128 m&egrave;tres 
+  parmi les plus hautes d'Europe continentale. La commune abrite des roches parmi les plus anciennes 
+  de France (2 milliards d'ann&eacute;es) et constitue le deuxi&egrave;me site le plus visit&eacute; 
+  de <strong>Normaundie</strong> apr&egrave;s le Mont-Saint-Michel.</p>
+
+    <div class="wiki-toc">
+      <p class="wiki-toc-title">Sommaire</p>
+      <ol><li><a href="#etymologie">&Eacute;tymologie &middot; &Eacute;timologie</a></li><li><a href="#geologie">G&eacute;ologie &middot; G&eacute;ologie</a></li><li><a href="#histoire">Histoire &amp; L&eacute;gendes &middot; Histou&egrave;re &amp; L&eacute;gendes</a></li><li><a href="#faune">Faune &amp; flore &middot; Fauna &amp; flore</a></li><li><a href="#mariage">Le mariage &middot; Lo maiage</a></li></ol>
+    </div>
+
+    <h2 class="wiki-h2" id="etymologie">&Eacute;tymologie &middot; &Eacute;timologie</h2>
+<p class="wiki-p">Le nom est attest&eacute; sous les formes <em>Jorborch</em> (XII&deg; s.), 
+     <em>Jorborc</em> (1180), <em>Jorburch</em> (1239). L'&eacute;tymologie scandinave la plus probable 
+     combine le vieux norrois <em>j&ouml;r&eth;</em> (&laquo;&nbsp;terre&nbsp;&raquo;) et 
+     <em>borg</em> (&laquo;&nbsp;rempart&nbsp;&raquo;) &mdash; soit <strong>&laquo;&nbsp;rempart 
+     de terre&nbsp;&raquo;</strong>.</p>
+     <p class="wiki-p">Le terme <strong>Nez</strong> vient du vieux scandinave <em>nes</em> 
+     &mdash; &laquo;&nbsp;pointe de terre&nbsp;&raquo; &mdash; utilis&eacute; par les Vikings 
+     lors de leurs p&eacute;riples autour de la presqu'&icirc;le du Cotentin.</p>
+<h2 class="wiki-h2" id="geologie">G&eacute;ologie &middot; G&eacute;ologie</h2>
+<p class="wiki-p">Le Nez de Jobourg est form&eacute; de <strong>gneiss icartien</strong>, 
+     une roche m&eacute;tamorphique datant du Pr&eacute;cambrien, vieille de pr&egrave;s de 
+     <strong>deux milliards d'ann&eacute;es</strong>. Il constitue la zone g&eacute;ologique 
+     la plus ancienne du Cotentin et l'une des plus vieilles de France.</p>
+     <p class="wiki-p">Les falaises, culminant &agrave; <strong>128 m&egrave;tres</strong>, 
+     comptent parmi les plus hautes d'Europe continentale. L'&eacute;rosion marine a sculpt&eacute; 
+     &agrave; leur pied un r&eacute;seau de grottes : la <em>Grotte du Lion</em>, la 
+     <em>Grotte de la Petite &Eacute;glise</em> et la <em>Grotte de la Grande &Eacute;glise</em>, 
+     qui auraient servi de caches aux contrebandiers des XVIII&deg; et XIX&deg; si&egrave;cles.</p>
+<h2 class="wiki-h2" id="histoire">Histoire &amp; L&eacute;gendes &middot; Histou&egrave;re &amp; L&eacute;gendes</h2>
+<p class="wiki-p">Les falaises sont occup&eacute;es d&egrave;s le M&eacute;solithique 
+     comme en t&eacute;moignent les silex taill&eacute;s d&eacute;couverts sur site. 
+     Depuis 1977, le <strong>CROSS Jobourg</strong> (Centre R&eacute;gional Op&eacute;rationnel 
+     de Surveillance et Sauvetage) surveille la navigation dans la Manche et coordonne 
+     les op&eacute;rations de sauvetage en mer.</p>
+     <p class="wiki-p">Au large, le <strong>Raz Blanchard</strong> &mdash; entre la Hague 
+     et l'&icirc;le d'Aurigny &mdash; est l'un des courants les plus forts au monde, rendant 
+     ces eaux redoutables depuis l'Antiquit&eacute;.</p>
+     <p class="wiki-p">Les <em>Goublins</em> &mdash; petits &ecirc;tres espi&egrave;gles 
+     de la mythologie normande &mdash; hantent, dit-on, les landes et les falaises, 
+     gardant des tr&eacute;sors enfouis dans les grottes.</p>
+     <div class="wiki-quote">&laquo;&nbsp;On dirait que le temps s'est assis dessus.&nbsp;&raquo;
+     <cite>Jean-Fran&ccedil;ois Millet, &agrave; propos de l'&eacute;glise romane de Jobourg (XI&deg; s.)</cite>
+     </div>
+<h2 class="wiki-h2" id="faune">Faune &amp; flore &middot; Fauna &amp; flore</h2>
+<p class="wiki-p">Les falaises constituent une r&eacute;serve ornithologique prot&eacute;g&eacute;e 
+     incluse dans la zone <strong>Natura 2000</strong> &laquo;&nbsp;C&ocirc;tes et Landes de la 
+     Hague&nbsp;&raquo; : cormorans hupp&eacute;s, fulmars bor&eacute;aux, grands corbeaux, 
+     go&eacute;lands argent&eacute;s y nichent. La flore de lande &mdash; bruy&egrave;res, 
+     ajoncs, lichens &mdash; est adapt&eacute;e aux vents marins et aux embruns.</p>
+<h2 class="wiki-h2" id="mariage">Le mariage &middot; Lo maiage</h2>
+<div class="wiki-mariage">
+       <p>Le Nez de Jobourg est le point de d&eacute;part du mariage pour les familles et les 
+       t&eacute;moins : c'est ici, face &agrave; la mer d'Irlande et aux &Icirc;les Anglo-Normandes, 
+       que la <strong>photo en famille</strong> est prise le samedi 28 A&ocirc;t 2027 
+       &agrave; <strong>9&nbsp;h&nbsp;30</strong>, avant de rejoindre Saint-Christophe-du-Foc 
+       pour la mairie. <em>(Famille &amp; t&eacute;moins uniquement)</em></p>
+     </div>
+
+
+    
+<div class="wiki-mariage" style="margin-top:8px">
+<h2 class="wiki-h2" id="transport">Acc&egrave;s en bus &middot; R&eacute;seau Cap Cotentin</h2>
+<p class="wiki-p"><strong>Ligne A1</strong> &mdash; <em>Route des Caps Nord</em><br>
+Arr&ecirc;t : <strong>Nez de Jobourg</strong> et <strong>Cit&eacute; Bel Air</strong> (Jobourg). 
+Circule <strong>uniquement les week-ends et vacances scolaires</strong> en correspondance avec la Ligne A &agrave; Beaumont-Hague (arr&ecirc;t Cit&eacute; Coriallo).</p>
+<p class="wiki-p"><a href="https://www.capcotentin.fr" style="color:var(--green);border-bottom:1px dotted var(--gold)">capcotentin.fr</a> &middot; Application Cap Cotentin.</p>
+</div>
+<div class="wiki-related">
+      <p class="wiki-related-title">Autres communes du mariage</p>
+      <div class="wiki-related-links"><a class="wiki-related-link" href="sant-chretophlle.html">Saint-Christophe-du-Foc<em>Sant-Chrétophlle</em></a><a class="wiki-related-link" href="urvile-nachevile.html">Urville-Nacqueville<em>Urvile-Nachevile</em></a><a class="wiki-related-link" href="greve-hague.html">Gréville-Hague<em>Greve-Hague</em></a></div>
+    </div>
+
+  </article>
+
+  <!-- INFOBOX -->
+  <aside class="wiki-infobox">
+    <div class="wiki-infobox-title">
+      Jobourg &mdash; Nez de Jobourg
+      <em>Jobouo &mdash; Nez d'Jobouo</em>
+    </div>
+    <div class="wiki-infobox-img">&#8764;</div>
+    <table><tr><td>D&eacute;partement</td><td>Manche (50)</td></tr><tr><td>R&eacute;gion</td><td>Normaundie</td></tr><tr><td>Code postal</td><td>50440</td></tr><tr><td>Population</td><td>~409 hab. (2023)</td></tr><tr><td>Statut</td><td>Commune d&eacute;l. de La Hague (dep. 2017)</td></tr><tr><td>Nom ancien</td><td>Jorborch (XII&deg; s.)</td></tr><tr><td>Falaises</td><td>128&nbsp;m &mdash; parmi les + hautes d'Europe</td></tr><tr><td>G&eacute;ologie</td><td>Gneiss icartien (~2 milliards d'ann&eacute;es)</td></tr><tr><td>Protection</td><td>Natura 2000, Conservatoire du Littoral</td></tr><tr><td>CROSS</td><td>Surveillance maritime dep. 1977</td></tr><tr><td>2&deg; site</td><td>Le + visit&eacute; de Normaundie apr&egrave;s le Mont-Saint-Michel</td></tr></table>
+    <div class="wiki-infobox-role">
+      <strong>R&ocirc;le dans le mariage</strong>
+      &#9641; Photo famille &amp; t&eacute;moins<br>Samedi 28 A&ocirc;t 2027 &mdash; 9&nbsp;h&nbsp;30
+    </div>
+    <div class="wiki-infobox-nor"><em>&laquo;&nbsp;J&ouml;r&eth;borg &mdash; le rempart<br>de terre des Vikings&nbsp;&raquo;</em><br><small style='opacity:.7'>2 milliards d'ann&eacute;es de g&eacute;ologie</small></div>
+  </aside>
+
+</div>
+
+<footer>
+  <div class="footer-names">Kevin &amp; Solene</div>
+  <div class="footer-date">28 &amp; 29 Aout 2027 &middot; Cap de la Hague &middot; Normaundie</div>
+</footer>
+
+</body>
+</html>

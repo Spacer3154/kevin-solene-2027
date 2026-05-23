@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saint-Christophe-du-Foc &mdash; Guide du mariage Kevin &amp; Solene</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green:   #1B3A2E;
+  --gold:    #C4993A;
+  --gold-lt: #E8D090;
+  --cream:   #FAF6ED;
+  --cream-dk:#F0E9D8;
+  --sage:    #6A8C78;
+  --ink:     #1C1A18;
+  --muted:   #7A6E62;
+  --line:    #D8CEB8;
+  --serif:   'Cormorant Garant', Georgia, serif;
+  --sans:    'Jost', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; }
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* NAV */
+.wiki-nav {
+  background: var(--green); padding: 0 5vw;
+  display: flex; align-items: center; gap: 16px;
+  height: 52px; box-shadow: 0 2px 16px rgba(0,0,0,.2);
+  position: sticky; top: 0; z-index: 100;
+}
+.wiki-nav-brand {
+  font-family: var(--serif); font-style: italic;
+  font-size: 18px; color: var(--gold-lt);
+  text-decoration: none; white-space: nowrap;
+}
+.wiki-nav-sep { width: 1px; height: 20px; background: rgba(196,153,58,.3); }
+.wiki-nav-crumb {
+  font-size: 9px; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(232,208,144,.55); white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wiki-nav-crumb span { color: rgba(232,208,144,.35); margin: 0 6px; }
+.wiki-nav-back {
+  margin-left: auto;
+  font-size: 9px; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(232,208,144,.55); white-space: nowrap;
+  transition: color .2s; text-decoration: none;
+}
+.wiki-nav-back:hover { color: var(--gold-lt); text-decoration: none; }
+
+/* HERO commune */
+.wiki-hero {
+  background: var(--green); padding: 40px 5vw 36px;
+  position: relative; overflow: hidden;
+}
+.wiki-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(196,153,58,.035) 20px, rgba(196,153,58,.035) 21px),
+    repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(196,153,58,.035) 20px, rgba(196,153,58,.035) 21px);
+}
+.wiki-hero-inner {
+  position: relative; z-index: 1;
+  max-width: 960px; margin: 0 auto;
+}
+.wiki-hero-eyebrow {
+  font-size: 9px; letter-spacing: .35em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 8px;
+}
+.wiki-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 6vw, 52px);
+  color: var(--gold-lt); font-weight: 400;
+  line-height: 1.15; margin-bottom: 4px;
+}
+.wiki-hero-nor {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(14px, 2.5vw, 20px);
+  color: rgba(232,208,144,.52); margin-bottom: 16px;
+}
+.wiki-hero-role {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(196,153,58,.12);
+  border: 1px solid rgba(196,153,58,.3);
+  padding: 6px 14px;
+  font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gold-lt);
+}
+
+/* MAIN LAYOUT */
+.wiki-main {
+  max-width: 960px; margin: 0 auto;
+  padding: 32px 5vw 64px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 36px;
+  align-items: start;
+}
+@media (max-width: 700px) {
+  .wiki-main { grid-template-columns: 1fr; }
+  .wiki-infobox { order: -1; }
+}
+
+/* INFOBOX */
+.wiki-infobox {
+  background: var(--cream-dk);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  position: sticky; top: 68px;
+}
+.wiki-infobox-title {
+  background: var(--green); color: var(--gold-lt);
+  font-family: var(--serif); font-size: 15px; font-weight: 600;
+  padding: 11px 14px; text-align: center; line-height: 1.3;
+}
+.wiki-infobox-title em {
+  display: block; font-size: 11px; font-style: italic;
+  opacity: .6; font-weight: 300; margin-top: 3px;
+}
+.wiki-infobox-img {
+  width: 100%; height: 140px;
+  background: var(--cream); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 58px; border-bottom: 1px solid var(--line);
+}
+.wiki-infobox table { width: 100%; border-collapse: collapse; }
+.wiki-infobox td {
+  padding: 6px 12px; border-bottom: 1px solid var(--line);
+  vertical-align: top; font-size: 12.5px; line-height: 1.5;
+}
+.wiki-infobox td:first-child {
+  font-weight: 500; color: var(--green);
+  width: 42%; font-size: 11.5px;
+}
+.wiki-infobox-role {
+  background: rgba(27,58,46,.06);
+  padding: 10px 13px; font-size: 12px;
+  color: var(--ink); line-height: 1.75;
+  border-top: 1px solid var(--line);
+}
+.wiki-infobox-role strong {
+  display: block; font-size: 9px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--green);
+  margin-bottom: 5px;
+}
+.wiki-infobox-nor {
+  background: rgba(196,153,58,.06);
+  padding: 9px 13px; font-family: var(--serif);
+  font-style: italic; font-size: 12px; color: var(--muted);
+  text-align: center; line-height: 1.7;
+  border-top: 1px solid var(--line);
+}
+
+/* ARTICLE */
+.wiki-article {}
+.wiki-lead {
+  font-family: var(--serif); font-size: 16.5px;
+  line-height: 1.8; color: var(--ink); margin-bottom: 24px;
+  font-weight: 300;
+}
+.wiki-lead strong { font-weight: 600; color: var(--green); }
+.wiki-lead em { font-style: italic; }
+
+.wiki-toc {
+  background: var(--cream-dk); border: 1px solid var(--line);
+  padding: 14px 18px; margin-bottom: 28px;
+  font-size: 13px;
+}
+.wiki-toc-title {
+  font-family: var(--sans); font-size: 10px; font-weight: 500;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 10px;
+}
+.wiki-toc ol { padding-left: 18px; display: flex; flex-direction: column; gap: 5px; }
+.wiki-toc li a { color: var(--green); font-size: 13px; }
+.wiki-toc li a:hover { color: var(--gold); }
+
+.wiki-h2 {
+  font-family: var(--sans); font-size: 10.5px; font-weight: 500;
+  letter-spacing: .26em; text-transform: uppercase;
+  color: var(--green); padding-bottom: 6px;
+  border-bottom: 1.5px solid var(--green);
+  margin: 28px 0 12px;
+}
+.wiki-h2:first-of-type { margin-top: 0; }
+
+.wiki-p {
+  font-size: 14.5px; line-height: 1.85;
+  color: var(--ink); font-weight: 300;
+  margin-bottom: 14px;
+}
+.wiki-p strong { font-weight: 600; color: var(--green); }
+.wiki-p em { font-style: italic; color: var(--muted); }
+.wiki-p a { color: var(--green); border-bottom: 1px dotted var(--gold); }
+
+.wiki-quote {
+  border-left: 3px solid var(--gold);
+  padding: 12px 18px; margin: 18px 0;
+  background: rgba(196,153,58,.05);
+  font-family: var(--serif); font-style: italic;
+  font-size: 15.5px; color: var(--muted); line-height: 1.75;
+}
+.wiki-quote cite {
+  display: block; font-style: normal;
+  font-size: 11.5px; color: var(--sage);
+  margin-top: 7px; letter-spacing: .04em;
+}
+
+.wiki-persons {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 8px;
+  margin-bottom: 14px;
+}
+.wiki-persons li {
+  font-size: 14px; line-height: 1.65;
+  padding-left: 16px; position: relative; color: var(--ink);
+}
+.wiki-persons li::before {
+  content: '·'; position: absolute; left: 0;
+  color: var(--gold); font-size: 20px; line-height: 1;
+}
+.wiki-persons em { color: var(--muted); font-style: italic; }
+
+/* Mariage highlight */
+.wiki-mariage {
+  background: rgba(27,58,46,.05);
+  border-left: 3px solid var(--green);
+  padding: 16px 20px; margin-top: 8px;
+}
+.wiki-mariage p { font-size: 14px; line-height: 1.8; color: var(--ink); }
+.wiki-mariage strong { color: var(--green); font-weight: 600; }
+
+/* Related communes */
+.wiki-related {
+  margin-top: 40px; padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.wiki-related-title {
+  font-size: 9px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px;
+}
+.wiki-related-links {
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.wiki-related-link {
+  padding: 7px 14px;
+  background: var(--cream-dk); border: 1px solid var(--line);
+  font-size: 12px; color: var(--green);
+  transition: all .2s;
+}
+.wiki-related-link:hover {
+  background: var(--green); color: var(--gold-lt);
+  text-decoration: none;
+}
+.wiki-related-link em { display: block; font-style: italic; font-size: 10px; color: var(--muted); margin-top: 1px; }
+.wiki-related-link:hover em { color: rgba(232,208,144,.6); }
+
+/* FOOTER */
+footer {
+  background: #0F2419; padding: 32px 5vw;
+  text-align: center; display: flex; flex-direction: column; gap: 8px;
+}
+.footer-names { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--gold-lt); }
+.footer-date { font-size: 8.5px; letter-spacing: .32em; text-transform: uppercase; color: rgba(232,208,144,.36); }
+</style>
+</head>
+<body>
+
+<nav class="wiki-nav">
+  <a href="index.html" class="wiki-nav-brand">K &amp; S</a>
+  <div class="wiki-nav-sep"></div>
+  <span class="wiki-nav-crumb">
+    Communes du mariage<span>&rsaquo;</span>Saint-Christophe-du-Foc
+  </span>
+  <a href="index.html" class="wiki-nav-back">&larr; Retour au site</a>
+</nav>
+
+<div class="wiki-hero">
+  <div class="wiki-hero-inner">
+    <p class="wiki-hero-eyebrow">Commune du Cotent&icirc;n &middot; Manche (50)</p>
+    <h1 class="wiki-hero-title">Saint-Christophe-du-Foc</h1>
+    <p class="wiki-hero-nor">Sant-Chr&eacute;tophlle</p>
+    <div class="wiki-hero-role">&#9878;&ensp;C&eacute;r&eacute;monie civile &mdash; 28 A&ocirc;t 2027, 11&nbsp;h&nbsp;00</div>
+  </div>
+</div>
+
+<div class="wiki-main">
+
+  <!-- ARTICLE -->
+  <article class="wiki-article">
+
+    <p class="wiki-lead"><strong>Saint-Christophe-du-Foc</strong> <em>(Sant-Chr&eacute;tophlle en normand)</em> est une commune 
+  du d&eacute;partement de la Manche, en Normaundie, situ&eacute;e dans le Cotentin &agrave; une dizaine de kilom&egrave;tres 
+  au nord-ouest de Cherbourg (Tchidbouo). Modeste village d'environ 409 habitants, travers&eacute; par la rivi&egrave;re 
+  <strong>Divette</strong>, il se distingue par l'originalit&eacute; de son nom : le mot <em>Foc</em>, issu du normand 
+  ancien <em>f&ocirc;</em> signifiant &laquo;&nbsp;h&ecirc;tre&nbsp;&raquo;, ne se prononce pas en normand cot entinais.</p>
+
+    <div class="wiki-toc">
+      <p class="wiki-toc-title">Sommaire</p>
+      <ol><li><a href="#etymologie">&Eacute;tymologie &middot; &Eacute;timologie</a></li><li><a href="#histoire">Histoire &middot; Histou&egrave;re</a></li><li><a href="#geographie">G&eacute;ographie &middot; G&eacute;ographie</a></li><li><a href="#personnalites">Personnalités notables</a></li><li><a href="#mariage">Le mariage &middot; Lo maiage</a></li></ol>
+    </div>
+
+    <h2 class="wiki-h2" id="etymologie">&Eacute;tymologie &middot; &Eacute;timologie</h2>
+<p class="wiki-p">Le nom est compos&eacute; de deux &eacute;l&eacute;ments distincts. <strong>Saint-Christophe</strong> 
+     renvoie &agrave; l'&eacute;glise paroissiale d&eacute;di&eacute;e &agrave; saint <em>Cristofle</em> &mdash; forme dialectale normande 
+     de Christophe. Le second &eacute;l&eacute;ment, <strong>Foc</strong>, est issu de l'ancien normand <em>f&ocirc;</em> ou 
+     <em>fou</em>, signifiant &laquo;&nbsp;h&ecirc;tre&nbsp;&raquo;.</p>
+     <p class="wiki-p">Ce terme, n'&eacute;tant plus compris des locuteurs comme d&eacute;signant un arbre, a &eacute;t&eacute; 
+     remotiv&eacute; en <em>foc</em> &mdash; voile de bateau &mdash; terme familier dans cette r&eacute;gion maritime. 
+     En normand, le <strong>C final ne se prononce pas</strong>. Un certain <em>Petrus Helge de Fayo</em> est 
+     mentionn&eacute; dans un texte latin de 1227, le pr&eacute;nom Helge (du vieux norrois <em>Helgi</em>, 
+     &laquo;&nbsp;le saint&nbsp;&raquo;) trahissant l'origine scandinave du personnage.</p>
+<h2 class="wiki-h2" id="histoire">Histoire &middot; Histou&egrave;re</h2>
+<p class="wiki-p">La commune fait historiquement partie de la g&eacute;n&eacute;ralit&eacute; de Caen, 
+     de l'&eacute;lection de Valognes et de la sergenterie de Tollevast. Rattach&eacute;e au dioc&egrave;se de Coutances, 
+     elle d&eacute;pend de l'archidiacoon&eacute; du Cotentin et du doyenn&eacute; des Pieux.</p>
+     <p class="wiki-p">Sa superficie de 358 hectares en faisait autrefois le territoire le moins &eacute;tendu du canton 
+     des Pieux. La commune est aujourd'hui rattach&eacute;e &agrave; la <strong>communaut&eacute; d'agglom&eacute;ration 
+     du Cotentin</strong>. Sa population a plus que doubl&eacute; en quarante ans, passant d'environ 170 habitants 
+     en 1968 &agrave; 409 en 2023.</p>
+<h2 class="wiki-h2" id="geographie">G&eacute;ographie &middot; G&eacute;ographie</h2>
+<p class="wiki-p">Situ&eacute;e &agrave; 65 m&egrave;tres d'altitude moyenne, la commune est drain&eacute;e 
+     par la <strong>Divette</strong>, rivi&egrave;re c&ocirc;ti&egrave;re de 28 kilom&egrave;tres qui prend sa source 
+     dans la commune voisine de Bricquebosq et se jette dans la Manche &agrave; Cherbourg apr&egrave;s avoir 
+     travers&eacute; huit communes.</p>
+     <p class="wiki-p">Le territoire est bord&eacute; par les communes de Virandeville, Sotteville, Bricquebosq, 
+     Teurth&eacute;ville-Hague et Helleville. L'altitude varie entre 44 et 99 m&egrave;tres, les points hauts 
+     &eacute;tant occup&eacute;s par les landes typiques du Cotentin.</p>
+<h2 class="wiki-h2" id="personnalites">Personnalités notables</h2>
+<ul class="wiki-persons">
+       <li><strong>Jacques Casimir Jouan</strong> (1767&ndash;1847) <em>&mdash; mar&eacute;chal de camp, 
+       militaire de la R&eacute;volution et de l'Empire, n&eacute; dans la commune.</em></li>
+     </ul>
+<h2 class="wiki-h2" id="mariage">Le mariage &middot; Lo maiage</h2>
+<div class="wiki-mariage">
+       <p>C'est &agrave; Saint-Christophe-du-Foc que <strong>K&eacute;vin et Sol&egrave;ne</strong> 
+       c&eacute;l&egrave;brent leur <strong>c&eacute;r&eacute;monin civile</strong> le samedi 
+       28 A&ocirc;t 2027 &agrave; 11&nbsp;h&nbsp;00, &agrave; la mairie de la commune.</p>
+     </div>
+
+
+    <div class="wiki-related">
+      <p class="wiki-related-title">Autres communes du mariage</p>
+      <div class="wiki-related-links"><a class="wiki-related-link" href="urvile-nachevile.html">Urville-Nacqueville<em>Urvile-Nachevile</em></a><a class="wiki-related-link" href="greve-hague.html">Gréville-Hague<em>Greve-Hague</em></a><a class="wiki-related-link" href="jobouo.html">Jobourg<em>Jobouo</em></a></div>
+    </div>
+
+  </article>
+
+  <!-- INFOBOX -->
+  <aside class="wiki-infobox">
+    <div class="wiki-infobox-title">
+      Saint-Christophe-du-Foc
+      <em>Sant-Chr&eacute;tophlle</em>
+    </div>
+    <div class="wiki-infobox-img">&#9962;</div>
+    <table><tr><td>D&eacute;partement</td><td>Manche (50)</td></tr><tr><td>R&eacute;gion</td><td>Normaundie</td></tr><tr><td>Code postal</td><td>50340</td></tr><tr><td>Population</td><td>~409 hab. (2023)</td></tr><tr><td>Superficie</td><td>3,58&nbsp;km&sup2;</td></tr><tr><td>Altitude</td><td>44&ndash;99&nbsp;m</td></tr><tr><td>Rivi&egrave;re</td><td>La Divette</td></tr><tr><td>Habitants</td><td>Les Saint-Christophais</td></tr><tr><td>Canton</td><td>Les Pieux</td></tr><tr><td>Intercommunalit&eacute;</td><td>Agglo. Cotentin</td></tr></table>
+    <div class="wiki-infobox-role">
+      <strong>R&ocirc;le dans le mariage</strong>
+      &#9878; C&eacute;r&eacute;monie civile<br>Samedi 28 A&ocirc;t 2027 &mdash; 11&nbsp;h&nbsp;00
+    </div>
+    <div class="wiki-infobox-nor"><em>&laquo;&nbsp;En bon normand, le C de Foc ne se prononce pas.&nbsp;&raquo;</em></div>
+  </aside>
+
+</div>
+
+<footer>
+  <div class="footer-names">Kevin &amp; Solene</div>
+  <div class="footer-date">28 &amp; 29 Aout 2027 &middot; Cap de la Hague &middot; Normaundie</div>
+</footer>
+
+</body>
+</html>
